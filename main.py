@@ -10,6 +10,8 @@ import plotly.graph_objects as go
 import random
 import requests
 
+
+
 # Set up the Google API key
 os.environ["GOOGLE_API_KEY"] = "AIzaSyDSiqK6SxS9GEfIi5SpBQUw4R_2oyTYNKY"
 
@@ -24,6 +26,17 @@ st.set_page_config(
 
     layout="centered"
 )
+
+st.markdown("""
+    <style>
+    .stButton > button {
+        background-color: #007BFF;
+        color: white;
+        width: 130px;
+        border-radius: 10px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 
 # Initialize conversation memory
@@ -201,7 +214,19 @@ def second_page():
 
 
 def create_daily_planner(ai_response):
+
     st.subheader("Your Personalized Daily Planner", divider="rainbow")
+    st.markdown("""
+            <style>
+            .stApp {
+                background-color: #000000;
+                color: #4A4A4A;
+            }
+            stTextInput > div > div > input {
+                background-color: #FFE4B5;
+            }
+            </style>
+            """, unsafe_allow_html=True)
 
     # List of inspirational quotes
     quotes = [
@@ -326,7 +351,7 @@ def chat_page():
     # st.sidebar.metric("Time Remaining", f"{minutes}:{seconds:02d}")
 
     if remaining_time <= 50 and not st.session_state.get('warning_shown', False):
-        st.toast("⚠ Your session is going to end in 40 seconds!", icon="⚠")
+        st.toast("Your session is going to end soon!", icon="⚠")
         st.session_state.warning_shown = True
 
     if remaining_time == 0 and not st.session_state.timer_complete:
@@ -453,6 +478,9 @@ def meditation_page():
     """)
 
 
+
+
+
 # Games Page
 def games_page():
     back_button()
@@ -465,6 +493,8 @@ def games_page():
             <li><strong>Maze:</strong> A relaxing puzzle game. <a href="https://poki.com/en/g/maze-path-of-light">Play now</a></li>
             <li><strong>Infinity Loop Hex: </strong> A relaxing puzzle game. <a href="https://poki.com/en/g/infinity-loop-hex">Play now</a></li>
             <li><strong>Subway Surfers: </strong>An adventurous obstacle game<a href="https://poki.com/en/g/subway-surfers">Play now</a></li>
+            <li><strong>Tetris: </strong>Your nostalgic block game<a href="https://www.goodoldtetris.com/">Play now</a></li>
+            <li><strong>Sllides: </strong>The 1900s block game<a href="https://sllides.com/">Play now</a></li>
         </ul>
     """, unsafe_allow_html=True)
 

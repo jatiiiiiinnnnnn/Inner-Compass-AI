@@ -8,8 +8,6 @@ Inner Compass AI is an interactive web application designed to provide mental he
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -35,3 +33,30 @@ To run the application locally, follow these steps:
    ```bash
    git clone https://github.com/yourusername/inner-compass-ai.git
    cd inner-compass-ai
+
+2. **Set up a virtual environment (optional but recommended):**
+   '''bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+3. **Install the required packages:**
+   '''bash
+   pip install -r requirements.txt
+
+4. **Set your Google API key:**
+   Create a .env file in the root directory and add your API key:
+      GOOGLE_API_KEY=YOUR_API_KEY
+   
+6. **Run the application:**
+   streamlit run app.py
+
+## Usage
+
+- Navigate through the application using the provided buttons and links.
+- Start a conversation with the AI assistant by clicking "Start Sharing."
+- Choose options for meditation or games on the second page.
+- Use the chat feature to discuss your feelings and receive guidance.
+
+## Disclaimer
+This AI assistant is not a substitute for professional mental health care. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+
